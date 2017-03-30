@@ -14,6 +14,12 @@ import java.util.List;
  * Created by zx on 2015/10/5.
  */
 public class Main {
+
+    /**
+     * 程序入口
+     * @param args 参数组
+     * @throws UnsupportedEncodingException
+     */
     public static void main(String[] args) throws UnsupportedEncodingException {
         DHTClient dhtClient = new DHTClient("91.121.59.153", 6881);
         for (int i = 0; i < 20; i++)
