@@ -10,6 +10,8 @@ import java.net.*;
  * Created by zx on 2015/10/5.
  */
 public class DHTClient {
+
+    /** udp发送器 */
     private DatagramSocket sender = null;
     InetAddress inetAddress = null;
     int port = -1;
