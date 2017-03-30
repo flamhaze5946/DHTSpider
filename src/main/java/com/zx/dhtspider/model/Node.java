@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
+ * 节点模型
  * Created by zx on 2015/10/4.
  */
 public class Node implements Comparable<Node>, Comparator<Node>{
@@ -56,7 +57,6 @@ public class Node implements Comparable<Node>, Comparator<Node>{
     }
 
 
-    @Override
     public int compare(Node o1, Node o2) {
         if (o1 == o2)
         {
@@ -87,12 +87,17 @@ public class Node implements Comparable<Node>, Comparator<Node>{
 
     }
 
+    /**
+     * @see Object#hashCode()
+     */
     @Override
     public int hashCode() {
         return Arrays.hashCode(id);
     }
 
-    @Override
+    /**
+     * @see Comparable#compareTo(Object)
+     */
     public int compareTo(Node o) {
         if (this == o)
         {

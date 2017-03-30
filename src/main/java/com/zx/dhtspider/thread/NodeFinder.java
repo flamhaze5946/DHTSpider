@@ -9,16 +9,20 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
+ * 节点查找器
  * Created by zx on 2015/10/5.
  */
 public class NodeFinder implements Runnable{
+
     /** DHT网络客户端 */
     private DHTClient dhtClient;
 
     /** 要寻找的node的Id */
     private byte[] nodeTargetId;
 
-    @Override
+    /**
+     * @see Runnable#run()
+     */
     public void run() {
         try {
             List<Node> nodeList = SpiderUtils.getNodesInfo(dhtClient.findNodeOnDHT(nodeTargetId));

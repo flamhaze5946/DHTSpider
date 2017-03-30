@@ -1,10 +1,6 @@
 package com.zx.dhtspider.constant;
 
 /**
- * Created by zx on 2015/10/5.
- */
-
-/**
  * DHT爬虫常量类
  */
 public interface SpiderConstant {

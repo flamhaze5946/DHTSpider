@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.*;
 
 /**
+ * DHT爬虫客户端
  * Created by zx on 2015/10/5.
  */
 public class DHTClient {

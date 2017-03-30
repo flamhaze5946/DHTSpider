@@ -6,14 +6,28 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
+ * 桶模型
  * Created by zx on 2015/10/4.
  */
 public class Bucket {
+
+    /** 最小值 */
     private BigDecimal min;
+
+    /** 最大值 */
     private BigDecimal max;
+
+    /** 桶中节点列表 */
     private List<Node> nodes;
+
+    /** 最后修改时间 */
     private Date last_accessed_time;
 
+    /**
+     * 构造函数
+     * @param min 桶中节点hash最小值
+     * @param max 桶中节点hash最大值
+     */
     public Bucket(BigDecimal min, BigDecimal max) {
         this.min = min;
         this.max = max;
@@ -25,12 +39,21 @@ public class Bucket {
         last_accessed_time = new Date();
     }
 
+    /**
+     * 判断节点是否处于桶范围
+     * @param id 节点id
+     * @return 节点是否处于桶范围
+     */
     public boolean nodeIdInRange(byte[] id)
     {
         String hexId = SpiderUtils.bytesToHexString(id);
         return SpiderUtils.toUnsignedString(min, 16).compareTo(hexId) <= 0 && SpiderUtils.toUnsignedString(max, 16).compareTo(hexId) >= 0;
     }
 
+    /**
+     * 添加节点
+     * @param node 节点
+     */
     public void appendNode(Node node)
     {
         assert node.getId().length == 20;
@@ -53,40 +76,67 @@ public class Bucket {
         }
     }
 
-
-    public BigDecimal getMin() {
+    /**
+     * method for get min
+     */
+    public BigDecimal getMin()
+    {
         return min;
     }
 
-    public Bucket setMin(BigDecimal min) {
+    /**
+     * method for set min
+     */
+    public void setMin(BigDecimal min)
+    {
         this.min = min;
-        return this;
     }
 
-    public BigDecimal getMax() {
+    /**
+     * method for get max
+     */
+    public BigDecimal getMax()
+    {
         return max;
     }
 
-    public Bucket setMax(BigDecimal max) {
+    /**
+     * method for set max
+     */
+    public void setMax(BigDecimal max)
+    {
         this.max = max;
-        return this;
     }
 
-    public List<Node> getNodes() {
+    /**
+     * method for get nodes
+     */
+    public List<Node> getNodes()
+    {
         return nodes;
     }
 
-    public Bucket setNodes(List<Node> nodes) {
+    /**
+     * method for set nodes
+     */
+    public void setNodes(List<Node> nodes)
+    {
         this.nodes = nodes;
-        return this;
     }
 
-    public Date getLast_accessed_time() {
+    /**
+     * method for get last_accessed_time
+     */
+    public Date getLast_accessed_time()
+    {
         return last_accessed_time;
     }
 
-    public Bucket setLast_accessed_time(Date last_accessed_time) {
+    /**
+     * method for set last_accessed_time
+     */
+    public void setLast_accessed_time(Date last_accessed_time)
+    {
         this.last_accessed_time = last_accessed_time;
-        return this;
     }
 }

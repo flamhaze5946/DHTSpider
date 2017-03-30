@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 表模型
  * Created by zx on 2015/10/4.
  */
 public class Table {
