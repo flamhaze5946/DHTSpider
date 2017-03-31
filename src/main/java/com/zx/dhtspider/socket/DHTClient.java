@@ -13,6 +13,8 @@ public class DHTClient {
 
     /** udp发送器 */
     private DatagramSocket sender = null;
+
+    /** ip地址 */
     InetAddress inetAddress = null;
     int port = -1;
     private DatagramPacket sendPacket;
